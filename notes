@@ -1,0 +1,10 @@
+reference : https://tailwindcss.com/docs/guides/vite
+
+
+Server 
+cd server
+npm init -y
+npm i bcrypt cors express jsonwebtoken mongoose multer nodemon path
+
+### run seeder 
+node --env-file=.env userSeed.js
