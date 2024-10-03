@@ -15,22 +15,19 @@ const authContext = ({children}) => {
                             "Authorization": `Bearer ${token}`
                         }
                     })
+                    console.log(response)
                     if(response.data.success) {
                         setUser(response.data.user)
                     }
                 } else {
                     setUser(null)
+                    setLoading(false)
                 }
             } catch (error) {
                 console.log(error)
                 if(error.response && !error.response.data.error) {
                     setUser(null)
                 }
-                // if(error.response && !error.response.data.success) {
-                //     setError(error.response.data.error)
-                // } else {
-                //     setError("Server Error")
-                // }
             } finally {
                 setLoading(false)
             }
